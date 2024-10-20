@@ -6,7 +6,6 @@ import db.MyJDBC;
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 
@@ -60,9 +59,7 @@ public class LoginFormGUI extends  Form{
         loginButton.setBackground(CommonConstants.TEXT_COLOR);
         loginButton.setBounds(125, 520, 250, 50);
 
-        loginButton.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
+        loginButton.addActionListener((ActionEvent _) -> {
                 var username = usernameField.getText();
                 var password = new String(passwordField.getPassword());
                 if(MyJDBC.validateLogin(username, password)) {
@@ -73,7 +70,6 @@ public class LoginFormGUI extends  Form{
                     JOptionPane.showMessageDialog(LoginFormGUI.this,
                             "Login Failed");
                 }
-            }
         });
 
         add(loginButton);

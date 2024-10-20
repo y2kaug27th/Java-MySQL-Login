@@ -3,7 +3,6 @@ package db;
 import constants.CommonConstants;
 
 import java.sql.DriverManager;
-import java.sql.ResultSet;
 import java.sql.SQLException;
 
 public class MyJDBC {

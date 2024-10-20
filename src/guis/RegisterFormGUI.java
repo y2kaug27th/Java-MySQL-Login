@@ -6,7 +6,6 @@ import db.MyJDBC;
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 
@@ -75,9 +74,7 @@ public class RegisterFormGUI extends Form{
         registerButton.setBackground(CommonConstants.TEXT_COLOR);
         registerButton.setBounds(125, 520, 250, 50);
 
-        registerButton.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
+        registerButton.addActionListener((ActionEvent _) -> {
                 var username = usernameField.getText();
                 var password = new String(passwordField.getPassword());
                 var rePassword = new String(rePasswordField.getPassword());
@@ -96,7 +93,6 @@ public class RegisterFormGUI extends Form{
                     JOptionPane.showMessageDialog(RegisterFormGUI.this,
                             "Error: Username must be at least 6 characters \n" +
                                     "and/or Password must match");
-            }
         });
 
         add(registerButton);
@@ -121,12 +117,10 @@ public class RegisterFormGUI extends Form{
     }
 
     private boolean validateUserInput(String username, String password, String rePassword) {
-        if (username.length() == 0 || password.length() == 0 || rePassword.length() ==0)
+        if (username.isEmpty() || password.isEmpty() || rePassword.isEmpty())
             return false;
         if (username.length() < 6)
             return false;
-        if (!password.equals(rePassword))
-            return false;
-        return true;
+        return password.equals(rePassword);
     }
 }
