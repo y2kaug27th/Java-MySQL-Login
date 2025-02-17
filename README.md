@@ -55,7 +55,7 @@ sequenceDiagram
 git clone https://github.com/y2kaug27th/Java-MySQL-Login.git
 ```
 ### 資料庫設置：
-在 ```Java-MySQL-Login\src\db\MyJDBC.java``` 中，更改資料庫設置以確保 Java 應用程式能夠正確地連接到 MySQL 資料庫，其中包括設定資料庫 URL、用戶名稱以及密碼。
+在 ```Java-MySQL-Login\src\constants\CommonConstants.java``` 中，更改資料庫設置以確保 Java 應用程式能夠正確地連接到 MySQL 資料庫，其中包括設定資料庫 URL、用戶名稱以及密碼。
 
 ### 運行專案：
 
